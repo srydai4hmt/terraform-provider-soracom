@@ -2,13 +2,11 @@ package main
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/plugin"
-	"github.com/hashicorp/terraform-plugin-sdk/terraform"
+	"github.com/nigamishibumi/terraform-provider-soracom/soracom"
 )
 
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: func() terraform.ResourceProvider {
-			return Provider()
-		},
+		ProviderFunc: soracom.Provider,
 	})
 }
